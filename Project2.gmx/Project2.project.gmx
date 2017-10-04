@@ -15,6 +15,7 @@
     <sprite>sprites\sprite6</sprite>
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\sprite8</sprite>
+    <sprite>sprites\s_bad0</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -29,6 +30,7 @@
     <object>objects\o_solid</object>
     <object>objects\o_bullet</object>
     <object>objects\o_enemy</object>
+    <object>objects\o_bad0</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
