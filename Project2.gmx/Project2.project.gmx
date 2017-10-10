@@ -16,6 +16,10 @@
     <sprite>sprites\sprite7</sprite>
     <sprite>sprites\sprite8</sprite>
     <sprite>sprites\s_bad0</sprite>
+    <sprite>sprites\spr_player_down</sprite>
+    <sprite>sprites\spr_player_idle</sprite>
+    <sprite>sprites\spr_player_jump</sprite>
+    <sprite>sprites\spr_player_running</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -26,11 +30,12 @@
     <script>scripts\move_push.gml</script>
   </scripts>
   <objects name="objects">
-    <object>objects\o_player</object>
+    <object>objects\o_player_test</object>
     <object>objects\o_solid</object>
     <object>objects\o_bullet</object>
     <object>objects\o_enemy</object>
     <object>objects\o_bad0</object>
+    <object>objects\o_player</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
