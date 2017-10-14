@@ -26,9 +26,9 @@
           <argument>
             <kind>1</kind>
             <string>/// move towards the mouse
-speed = 8;
-direction = point_direction(x,y,mouse_x,mouse_y);
-depth = -1;
+speed = 16;
+//direction = point_direction(x,y,x+1,y);
+depth = 99;
 </string>
           </argument>
         </arguments>
