@@ -28,6 +28,7 @@
   <scripts name="scripts">
     <script>scripts\move.gml</script>
     <script>scripts\move_push.gml</script>
+    <script>scripts\move_ext.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\o_player_test</object>
@@ -36,11 +37,16 @@
     <object>objects\o_enemy</object>
     <object>objects\o_bad0</object>
     <object>objects\o_player</object>
+    <object>objects\o_generic</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
     <room>rooms\room2</room>
   </rooms>
+  <constants number="2">
+    <constant name="h">0</constant>
+    <constant name="v">1</constant>
+  </constants>
   <help>
     <rtf>help.rtf</rtf>
   </help>
