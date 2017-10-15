@@ -37,7 +37,9 @@
     <object>objects\o_enemy</object>
     <object>objects\o_bad0</object>
     <object>objects\o_player</object>
-    <object>objects\o_generic</object>
+    <object>objects\o_generic_bad</object>
+    <object>objects\o_generic_bullet</object>
+    <object>objects\o_generic_solid</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
