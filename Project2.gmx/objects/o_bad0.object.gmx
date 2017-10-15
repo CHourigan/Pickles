@@ -41,6 +41,29 @@ alarm[0] = bullet_cooldown;
         </arguments>
       </action>
     </event>
+    <event eventtype="2" enumb="0">
+      <action>
+        <libid>1</libid>
+        <id>603</id>
+        <kind>7</kind>
+        <userelative>0</userelative>
+        <isquestion>0</isquestion>
+        <useapplyto>-1</useapplyto>
+        <exetype>2</exetype>
+        <functionname></functionname>
+        <codestring></codestring>
+        <whoName>self</whoName>
+        <relative>0</relative>
+        <isnot>0</isnot>
+        <arguments>
+          <argument>
+            <kind>1</kind>
+            <string>/// @description bullet cooldown alarm
+</string>
+          </argument>
+        </arguments>
+      </action>
+    </event>
     <event eventtype="3" enumb="0">
       <action>
         <libid>1</libid>
@@ -165,8 +188,6 @@ if( point_distance( 0, 0, spd_push[0], spd_push[1] ) &lt; 1 )
 // inherit  from o_generic
 event_inherited();
 
-show_debug_message("[DEBUG] ATTACK STATE");
-
 if ( instance_exists( o_player ) )
     {
 
@@ -176,21 +197,19 @@ if ( instance_exists( o_player ) )
         state_ = MOVEMENT;
         }
     
-//    if ( alarm[0] &lt;= 0 )
-//        {
-        var dir = point_direction( x, y, o_player.x, o_player.y );
+    if ( alarm[0] &lt;= 0 )
+        {
+        var dir = point_direction( x, 0, o_player.x, 0 );
     
-        var x_offset = lengthdir_x( 20, dir );
-        var y_offset = lengthdir_y( 20, dir );
+        var x_offset = lengthdir_x( 10, dir );
+        var y_offset = sprite_height / 2;
     
-        var bullet = instance_create( x + x_offset, y + y_offset, o_bullet ); 
+        var bullet = instance_create( x + x_offset, y - y_offset, o_bullet ); 
         bullet.direction = dir;    
-
-        show_debug_message("ATTACK");
                 
         // reset cooldown
         alarm[0] = bullet_cooldown;
-//        }
+        }
         
     }
 </string>
@@ -223,7 +242,7 @@ event_inherited();
 // check if player exists in room
 if( instance_exists( o_player ) &amp;&amp; distance_to_object( o_player ) &gt;= 48 )
     {   
-    state_ = MOVEMENT;
+    state_ = ATTACK;
     }
 
 </string>
