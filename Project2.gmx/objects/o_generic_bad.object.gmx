@@ -26,7 +26,7 @@
           <argument>
             <kind>1</kind>
             <string>/// @description object properties
-// object: o_bad0
+// object: o_generic_bad
 
 /*
  * --- STATES ---
@@ -36,7 +36,12 @@ ATTACK    = 1;
 HIT       = 2;
 
 /*
- * --- Variables ---
+ * --- Object Variables ---
+ */
+image_speed = .3;
+
+/*
+ * --- User-Defined Variables ---
  */
 spd[h]          = 0;        // x speed
 spd[v]          = 0;        // y speed
@@ -49,6 +54,8 @@ jump_height_    = -12       // jump height
 max_speed_      = 4;        // max speed
 friction_       = 0.3;      // friction
 health_         = 10;       // health
+
+is_gravity      = true;     // is our object bound to gravity?
 
 x_scale_ = image_xscale;
 y_scale_ = image_yscale;
@@ -78,8 +85,7 @@ state_ = MOVEMENT;
           <argument>
             <kind>1</kind>
             <string>/// @description state processing
-
-image_speed = .3;
+// object: o_generic_bad
 
 // check if we're dead
 if( health_ &lt;= 0 )
@@ -110,7 +116,8 @@ event_user( state_ );
         <arguments>
           <argument>
             <kind>1</kind>
-            <string>/// @description
+            <string>/// @description 
+// object: o_generic_bad
 </string>
           </argument>
         </arguments>
@@ -134,6 +141,7 @@ event_user( state_ );
           <argument>
             <kind>1</kind>
             <string>/// @description ATTACK state
+// object: o_generic_bad
 </string>
           </argument>
         </arguments>
@@ -157,18 +165,22 @@ event_user( state_ );
           <argument>
             <kind>1</kind>
             <string>/// @description MOVE state
+// object: o_generic_bad
 
-// gravity check
-if ( !place_meeting( x, y + 1, o_solid ) ) 
+// gravity check, if we're in the air add gravity to our vertical speed 
+if( is_gravity == true )
     {
-    spd[v] += gravity_;
+    if ( !place_meeting( x, y + 1, o_solid ) ) 
+        {
+        spd[v] += gravity_;
+        }
+    else    
+        {
+        spd[v] = 0;
+        }    
+            
+    y += spd[v];
     }
-else    
-    {
-    spd[v] = 0;
-    }    
-    
-y += spd[v];
 </string>
           </argument>
         </arguments>
@@ -192,7 +204,7 @@ y += spd[v];
           <argument>
             <kind>1</kind>
             <string>/// @description draw
-
+// object: o_generic_bad
 
 </string>
           </argument>

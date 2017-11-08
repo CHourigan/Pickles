@@ -20,6 +20,7 @@
     <sprite>sprites\spr_player_idle</sprite>
     <sprite>sprites\spr_player_jump</sprite>
     <sprite>sprites\spr_player_running</sprite>
+    <sprite>sprites\s_placeholder0</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -40,6 +41,7 @@
     <object>objects\o_generic_bad</object>
     <object>objects\o_generic_bullet</object>
     <object>objects\o_generic_solid</object>
+    <object>objects\o_flyer0</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>

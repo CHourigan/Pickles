@@ -29,7 +29,7 @@
 // object: o_generic_bullet
 
 /*
- * --- Variables ---
+ * --- User-Defined Variables ---
  */
 speed   = 16;           // move towards the mouse
 depth   = 99;
