@@ -21,15 +21,26 @@
     <sprite>sprites\spr_player_jump</sprite>
     <sprite>sprites\spr_player_running</sprite>
     <sprite>sprites\s_placeholder0</sprite>
+    <sprite>sprites\spr_player_aim_up</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
   </backgrounds>
   <paths name="paths"/>
   <scripts name="scripts">
-    <script>scripts\move.gml</script>
+    <script>scripts\collision_check.gml</script>
     <script>scripts\move_push.gml</script>
     <script>scripts\move_ext.gml</script>
+    <scripts name="player_states">
+      <script>scripts\scr_move_state.gml</script>
+      <script>scripts\scr_idle_state.gml</script>
+      <script>scripts\scr_jump_state.gml</script>
+      <script>scripts\scr_fall_state.gml</script>
+      <script>scripts\scr_down_state.gml</script>
+      <script>scripts\scr_get_inputs.gml</script>
+      <script>scripts\scr_aim_up_state.gml</script>
+    </scripts>
+    <script>scripts\player_movement.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\o_player_test</object>

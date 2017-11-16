@@ -10,7 +10,16 @@
   <persistent>0</persistent>
   <colour>0</colour>
   <showcolour>-1</showcolour>
-  <code></code>
+  <code>enum player_states {
+    p_idle,
+    p_move,
+    p_jump,
+    p_fall,
+    p_crouch,
+    p_climb,
+    p_aim,
+    p_aim_up    
+}</code>
   <enableViews>-1</enableViews>
   <clearViewBackground>-1</clearViewBackground>
   <clearDisplayBuffer>-1</clearDisplayBuffer>
