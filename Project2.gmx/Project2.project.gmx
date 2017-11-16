@@ -42,6 +42,7 @@
     <object>objects\o_generic_bullet</object>
     <object>objects\o_generic_solid</object>
     <object>objects\o_flyer0</object>
+    <object>objects\o_camera</object>
   </objects>
   <rooms name="rooms">
     <room>rooms\room0</room>
