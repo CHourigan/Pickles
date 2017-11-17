@@ -283,9 +283,7 @@ if( instance_exists( o_player ) )
         // TODO: figure a better way to do this (macro erxpression?)
         direction_ = direction_ * -1;
         spd[h] = 2 * direction_;
-        show_debug_message("move " + string(spd[h]))
         }
-    show_debug_message("move " + string(spd[h]))
     
     move_ext( spd );
             

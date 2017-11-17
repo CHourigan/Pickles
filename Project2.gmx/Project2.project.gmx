@@ -39,6 +39,7 @@
       <script>scripts\scr_down_state.gml</script>
       <script>scripts\scr_get_inputs.gml</script>
       <script>scripts\scr_aim_up_state.gml</script>
+      <script>scripts\bullet_dir.gml</script>
     </scripts>
     <script>scripts\player_movement.gml</script>
   </scripts>
