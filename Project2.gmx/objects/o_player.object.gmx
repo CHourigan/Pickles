@@ -171,30 +171,42 @@ if alarm[0] &lt;= 0 {
   Draw the player based on what state is set. The flipped_ variable tells
   us which way the sprite should be facing.
 */
-switch(state_){
+switch(state_)
+    {
     //Use idle sprite when idle.
     case player_states.p_idle:
-        draw_sprite_ext(spr_player_idle, 0, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
+        mask_index = spr_player_idle;
+        draw_sprite_ext( spr_player_idle, 0, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha );
         break;
+        
     //Use moving sprite animation when moving.    
     case player_states.p_move:
-        draw_sprite_ext(spr_player_running, image_index, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
+        mask_index = spr_player_running;
+        draw_sprite_ext( spr_player_running, image_index, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha );
         break;
+        
     //Use jump sprite animation when jumping/falling   
     case player_states.p_jump:
     case player_states.p_fall:
-        draw_sprite_ext(spr_player_jump, image_index, x, y-9, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
-        break;
-    //Use crouch sprite animation when laying down
-    case player_states.p_crouch:
-        draw_sprite_ext(spr_player_down, image_index, x, y+9, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
-        break;
-    //Use aim_up animation when aiming up
-    case player_states.p_aim_up:
-        draw_sprite_ext(spr_player_aim_up, image_index, x-2, y-13, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
+        mask_index = spr_player_jump
+        draw_sprite_ext( spr_player_jump, image_index, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha );
         break;
         
-}
+    //Use crouch sprite animation when laying down
+    case player_states.p_crouch:
+        mask_index = spr_player_down
+        draw_sprite_ext( spr_player_down, image_index, x, y+9, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha );
+        break;
+        
+    //Use aim_up animation when aiming up
+    case player_states.p_aim_up:
+        mask_index = spr_player_aim_up;
+        draw_sprite_ext( spr_player_aim_up, image_index, x-2, y-13, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha );
+        break;
+        
+    default:
+        break;   
+    }
 
 
 </string>

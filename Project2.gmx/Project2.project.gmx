@@ -42,6 +42,7 @@
       <script>scripts\bullet_dir.gml</script>
     </scripts>
     <script>scripts\player_movement.gml</script>
+    <script>scripts\debug_draw_collision_mask.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\o_player_test</object>
