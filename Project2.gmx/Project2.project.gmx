@@ -22,6 +22,7 @@
     <sprite>sprites\spr_player_running</sprite>
     <sprite>sprites\s_placeholder0</sprite>
     <sprite>sprites\spr_player_aim_up</sprite>
+    <sprite>sprites\spr_player_diag_up</sprite>
   </sprites>
   <backgrounds name="background">
     <background>background\background0</background>
@@ -39,9 +40,11 @@
       <script>scripts\scr_down_state.gml</script>
       <script>scripts\scr_get_inputs.gml</script>
       <script>scripts\scr_aim_up_state.gml</script>
-      <script>scripts\bullet_dir.gml</script>
+      <script>scripts\player_bullet_dir.gml</script>
+      <script>scripts\scr_aim_state.gml</script>
     </scripts>
     <script>scripts\player_movement.gml</script>
+    <script>scripts\player_bullet_offset.gml</script>
   </scripts>
   <objects name="objects">
     <object>objects\o_player_test</object>

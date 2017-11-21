@@ -107,6 +107,7 @@ y_scale_ = image_yscale;
     case player_states.p_fall: scr_fall_state(); break;
     case player_states.p_crouch: scr_down_state(); break;
     case player_states.p_aim_up: scr_aim_up_state(); break;
+    case player_states.p_aim: scr_aim_state(); break;
 }
 
 
@@ -176,6 +177,9 @@ switch(state_){
     case player_states.p_idle:
         draw_sprite_ext(spr_player_idle, 0, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
         break;
+    case player_states.p_aim:
+        draw_sprite_ext(spr_player_diag_up, 0, x-(2*flipped_), y-4, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
+        break;
     //Use moving sprite animation when moving.    
     case player_states.p_move:
         draw_sprite_ext(spr_player_running, image_index, x, y, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
@@ -191,7 +195,7 @@ switch(state_){
         break;
     //Use aim_up animation when aiming up
     case player_states.p_aim_up:
-        draw_sprite_ext(spr_player_aim_up, image_index, x-2, y-13, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
+        draw_sprite_ext(spr_player_aim_up, image_index, x, y-13, x_scale_*flipped_, y_scale_, 0, image_blend, image_alpha);
         break;
         
 }
