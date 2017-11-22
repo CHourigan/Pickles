@@ -35,6 +35,7 @@ event_inherited();
  * --- User-Defined Variables ---
  */
 bullet_range_       = 48;       // range target must be in to fire
+flash = 0;
 
 /*
  * --- Bullet Cooldown ---
@@ -115,6 +116,7 @@ event_inherited();
             <string>/// @description take damage
 
 health -= 1
+flash = 1;
 
 // delete bullet
 with other
@@ -285,21 +287,31 @@ if( instance_exists( o_player ) &amp;&amp; distance_to_object( o_player ) &gt;= 
 // inherit draw from o_generic
 event_inherited();
 
+
+
 /*
  * --- Main Process ---
  */
 var dir = point_direction( x, y-sprite_height/2, o_player.x, o_player.y );
-var flipped = ( x &gt; o_player.x ) * 2 - 1;
+image_xscale = ( x &gt; o_player.x ) * 2 - 1;
 
 draw_sprite_ext( s_bad0, 
                 image_index, 
                 x, 
                 ceil(y), 
-                x_scale_ * flipped, 
+                image_xscale, 
                 y_scale_, 
                 0, 
                 image_blend, 
                 image_alpha );
+                
+if(flash &gt; 0){
+    shader_set(sh_white);
+    draw_self();
+    shader_reset();
+    flash--;
+}
+
 
 // figure out which direction the player is in relation to character
 // TODO integrate with player object

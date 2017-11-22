@@ -1,7 +1,10 @@
 scr_get_inputs();
-
+player_bullet_dir();
+player_bullet_offset();
 player_movement();
-bullet_x_dir = flipped_;
+//bullet_x_dir = flipped_;
+//bullet_y_dir = vinput;
+
 image_speed = .3;
 
 
@@ -13,9 +16,6 @@ image_speed = .3;
  }
  if jump {
     state_ = player_states.p_jump;
- }
- if down {
-    state_ = player_states.p_crouch;
  }
  if aim {
     state_ = player_states.p_aim;

@@ -2,8 +2,7 @@ scr_get_inputs();
  
 
  hspeed_ = lerp( hspeed_, 0, friction_);
- bullet_x_dir = flipped_;
- bullet_y_offset = 6;
+ player_bullet_offset();
  image_speed = .3;
  
  if hinput != 0 {
@@ -21,7 +20,7 @@ scr_get_inputs();
  if aim_up {
     state_ = player_states.p_aim_up;
  }
- /*if aim {
+ if aim {
     state_ = player_states.p_aim;
- }*/
+ }
 

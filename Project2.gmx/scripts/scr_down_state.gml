@@ -1,8 +1,12 @@
 scr_get_inputs();
 
-bullet_x_dir = flipped_;
+
 hspeed_ = lerp( hspeed_, 0, friction_);
-bullet_y_offset = -13;
+ bullet_x_dir = flipped_;
+ bullet_y_dir = 0;
+ bullet_x_offset = 8;
+ bullet_y_offset = 5;
+
 
 
 if(!keyboard_check(vk_down)){
